@@ -1,0 +1,46 @@
+Migrations
+
+    - php artisan migrate
+    - php artisan make:migration create_products_table (exemplo)
+    - php artisan migrate status (verificar o que ainda não foi migrado para o banco)
+    - php artisan migrate:fresh (todas as tabelas são deletadas e migradas novamente)
+    - php artisan make:migration add_category_to_products_table
+        *Schema::table*
+    - php artisan migrate:refresh (faz o rollback da migração e faz o migrate novamente)
+
+
+Flash Messages
+
+    - Podemos adicionar mensagens aos usuários por SESSION.
+    - Estas mensagens são conhecidas como flash messages.
+    - Podemos adicionar com o método WITH nos controllers.
+    - Utilizadas para apresentar um feedback ao usuário.
+    - No blade, podemos verificar a presença da mensagem pela diretiva @session.
+
+
+Enviar arquivos pelo formulário
+
+    - É preciso adicionar enctype="multipart/form-data" no form
+
+
+Autenticação Laravel
+
+    - Jetsteam: instalar com composer. Depois instalar Liveware. Por fim, rodamos as migrations.
+
+
+Relations
+
+- One to many
+    - um usuário é dono de um evento e também tem a possibilidade de possuir vários eventos.
+    - precisaremos alterar as migrations adicionando uma chave estrangeira no model Event.
+
+- Many to many
+    - um usuário pode ter vários eventos e um evento vários participantes.
+
+
+Colocar ->middleware('auth'); no final da rota já evita que pessoas não logadas acessem a rota.
+
+
+attach - faz a ligação
+
+detach - desfaz a ligação
